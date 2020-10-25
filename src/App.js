@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     color: "#0E76A8",
     margin: "5px"
-  }
+  },
 }));
 
 export default function App() {
@@ -50,13 +50,13 @@ export default function App() {
               <Avatar className={classes.avatar} alt="Profile Image" src={profileImage} />
             </Grid>
             <Grid item><Typography variant="h4">Sushant S. Lokhande</Typography></Grid>
-            <Grid item> <Typography variant="h6">Senior Software Developer</Typography></Grid>
-            <Grid item> <Typography variant="body" color="textSecondary">Toronto, ON, Canada</Typography></Grid>
+            <Grid item><Typography variant="h6">Senior Software Developer</Typography></Grid>
+            <Grid item><Typography variant="body" color="textSecondary">Toronto, ON, Canada</Typography></Grid>
           </Grid>
           <Box className={classes.divider}>
             <Divider variant="middle" />
           </Box>
-          <Grid container direction="row" align="baseline" justify="space-around">
+          <Grid container direction="row" alignItems="center" justify="space-around">
             <Grid item>
               <Box className={classes.boxMiddle}>
                 <PhoneIphoneIcon className={classes.icon} />
