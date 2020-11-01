@@ -1,5 +1,5 @@
 import './App.css';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Container from "@material-ui/core/Container";
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -17,6 +17,22 @@ import MorneauShepellLogo from "./images/morneau-shepell-logo.png"
 import TailormanLogo from "./images/tailorman-logo.png"
 import HoneywellLogo from "./images/honeywell-logo.png"
 import AmadeusLogo from "./images/amadeus-logo.png"
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#607d8b",
+      dark: "#34515f",
+      light: "#8eacbc",
+      contrastText: "#ffffff"
+    },
+    secondary: {
+      main: "#bdbdbd",
+      dark: "#8d8d8d",
+      light: "#efefef",
+    },
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -41,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 export default function App() {
   const classes = useStyles();
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Container className={classes.container}>
         <Paper className={classes.paper} elevation={3}>
           <Grid container direction="column" alignItems="center" justify="center">
@@ -76,9 +92,10 @@ export default function App() {
                 duration="Sep 2020 - Present"
                 logo={MorneauShepellLogo}
                 company="Morneau Shepell Ltd."
+                techStack={['React.js', 'Material-UI', 'Storybook']}
                 bullets={["Front-end developer working on the mobile-friendly Financial Well Being Web Application",
                   "Responsible for delivery of code based on Figma screen mockups for desktop and mobile views",
-                  "Tech Stack: React.js, Material-UI, Storybook"]}
+                  "Involved in design and integration of APIs for data exchange between back-end and front-end"]}
               />
             </Grid>
             <Grid item>
@@ -87,9 +104,10 @@ export default function App() {
                 duration="Oct 2019 - Jun 2020"
                 logo={TailormanLogo}
                 company="Camden Apparel Solutions Pvt. Ltd."
+                techStack={['React.js', 'JavaScript (ES6)', 'Node.js', 'MongoDB', 'PostgreSQL', 'AWS']}
                 bullets={["Software Engineering Manager and hands-on developer",
                   "Worked on Web Applications for In-Store operations (Order Workflow Management, Customer Service), Factory operations (Order Fulfilment) and global consumer-facing e-commerce website.",
-                  "Tech Stack: React.js, JavaScript, Node.js, MongoDB, PostgreSQL, AWS"]}
+                  "Established Agile Software Development Methodologies and enhanced performance"]}
               />
             </Grid>
             <Grid item>
@@ -98,9 +116,10 @@ export default function App() {
                 duration="Jul 2019 - Oct 2019"
                 logo={HoneywellLogo}
                 company="Honeywell Technology Solutions Labs India"
+                techStack={['React.js', 'JavaScript (ES6)', 'Node.js', 'HTML5', 'CSS3']}
                 bullets={[" Led a team of 8 software developers and testers as a Scrum Master, following the Scaled Agile Framework, and helped with the planning and execution of Program Increments",
                   "Implemented new Node.js server-side modules enhancing communication with external components and products using REST APIs and TCP/IP",
-                  "Tech Stack: React.js, Node.js, JavaScript (ES6), HTML5, CSS3"]}
+                  "Refactored several components of the system into cleaner and more reusable code"]}
               />
             </Grid>
             <Grid item>
@@ -109,14 +128,15 @@ export default function App() {
                 duration="Nov 2011 - Dec 2016"
                 logo={AmadeusLogo}
                 company="Amadeus Software Labs India"
+                techStack={['C++', 'Linux', 'SQL', 'Distributed Systems']}
                 bullets={["Owned several key components of the microservices based Hotel Booking Engine",
                   "Collaborated with cross-continental teams and Product Management through virtual meets and travel to refine requirements and realise the product roadmap",
-                  "Tech Stack: C++, Linux, SQL, Distributed Systems"]}
+                  "Documented functional and technical information and conducted trainings"]}
               />
             </Grid>
           </Grid>
         </Paper>
       </Container>
-    </>
+    </ThemeProvider>
   );
 }
